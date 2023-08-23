@@ -2,3 +2,14 @@ body{
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
 }
+table,th,td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 20px;
+}
+#secondptag{
+    color: rgb(240, 20, 20);
+}
+.class1{
+    color: rgb(0, 0, 255);
+}

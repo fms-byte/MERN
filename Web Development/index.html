@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <a href="newfile.html" target="_blank">Go to newfile</a><br>
+    <a href="include/third.html" target="_blank">Go to third</a>
+    <img src="img/mern.jpg" alt="MERN" style="width: 720px; height: 320px;">
     <h1>Hello World!</h1>
 
     <p style="color:red;">Lorem, ipsum dolor sit amet consectetur adipisicing elit.<br> Iure id pariatur repellendus vitae aut, minima nobis ad voluptatem?<br> Fugiat minus dolore consequuntur perspiciatis, maiores odit.</p>
@@ -55,18 +58,130 @@
     <!-- Abbrebiation -->
     <p><abbr title="Hyper Text Markup Language">HTML</abbr> is the standard markup language for creating <abbr title="World Wide Web">WWW</abbr> pages.</p>
 
+    <!-- Table -->
+    <table>
+        <caption>Class One Student Result</caption>
+        <tr>
+            <th>Roll</th>
+            <th>Name</th>
+            <th>Subject</th>
+            <th>Marks</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Farhan</td>
+            <td>Bangla</td>
+            <td>90</td>
+        </tr>
+        <tr>
+            <td rowspan="2">2</td>
+            <td>Shohag</td>
+            <td>Bangla</td>
+            <td>80</td>
+        </tr>
+        <tr>
+            <td>Shohag</td>
+            <td colspan="2">Bangla</td>
+        </tr>
+    </table>
+
+    <!-- list -->
+    <h2>Unorder List Default type</h2>
+    <ul>
+        <li>Farhan</li>
+        <li>Masud</li>
+        <li>Shohag</li>
+    </ul>
+    <h2>Unorder List type="circle"</h2>
+    <ul type="circle">
+        <li>Farhan</li>
+        <li>Masud</li>
+        <li>Shohag</li>
+    </ul>
+    <h2>Unorder List type="square"</h2>
+    <ul type="square">
+        <li>Farhan</li>
+        <li>Masud</li>
+        <li>Shohag</li>
+    </ul>
+    <h2>Unorder List type="disc"</h2>
+    <ul type="disc">
+        <li>Farhan</li>
+        <li>Masud</li>
+        <li>Shohag</li>
+    </ul>
+    <h2>Unorder List type="none"</h2>
+    <ul type="none">
+        <li>Farhan</li>
+        <li>Masud</li>
+        <li>Shohag</li>
+    </ul>
+    <h2>Order List Default type</h2>
+    <ol>
+        <li>Farhan</li>
+        <li>Masud</li>
+    </ol>
+    <h2>Order List type="1"</h2>
+    <ol type="1">
+        <li>Farhan</li>
+        <li>Masud</li>
+    </ol>
+    <h2>Order List type="A"</h2>
+    <ol type="A">
+        <li>Farhan</li>
+        <li>Masud</li>
+    </ol>
+    <h2>Order List type="a"</h2>
+    <ol type="a">
+        <li>Farhan</li>
+        <li>Masud</li>
+    </ol>
+    <h2>Order List type="I"</h2>
+    <ol type="I">
+        <li>Farhan</li>
+        <li>Masud</li>
+    </ol>
+    <h2>Order List type="i"</h2>
+    <ol type="i">
+        <li>Farhan</li>
+        <li>Masud</li>
+    </ol>
+
+    <!-- inline and block -->
+    <p style="background-color: aquamarine;">This is Block element as it is in P tag</p>
+    <span style="background-color: aquamarine;">This is Inline element as it is in SPAN tag</span>
+    <div style="background-color: aquamarine;">This is Block element as it is in DIV tag</div> 
+
+    <p id="secondptag">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, dignissimos.</p>
+
+    <p class="class1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, quod?</p>
+    <p class="class1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita, illo fugit odio amet dignissimos culpa velit perspiciatis officia veritatis enim.</p>
+
+    <!-- iframe -->
+    <iframe src="https://www.youtube.com/embed/9bZkp7q19f0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
     <!-- address -->
+    <br>
     <address>
         Md. Farhan Masud Shohag<br>
         CSE Department, <br>
         Jagannath University, Dhaka-1100 <br>
         Contact: <a href="mailto:fsh69711@gmail.com">Gmail</a> | <a href="tel:+8801648209351">Phone</a> | <a href="https://www.facebook.com/farhan.shohag0/" target="_blank">Facebook</a><br>
-    </address>
-
-    <!-- This is a comment -->
-
+    </address> 
 
     </p>
+    <!-- responsive -->
+    <p style="font-size: 5vw;">This is responsive text. Instead of px, we will use vw = viewport, that will make responsive</p>
+
+    <p id="ptag">This is from HTML</p>
+    <button type="button" onclick="myFunction()">Click Me</button>
+
+    <script>
+        function myFunction() {
+            document.getElementById("ptag").innerHTML = "THIS IS FROM JAVASCRIPT";
+        }
+    </script>
+
 
 </body>
 </html>
