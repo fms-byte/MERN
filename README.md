@@ -1,4 +1,5 @@
 # MERN
+## A 6-month long course on Bohubrihi Started on (22 AUG 2023 to 20 FEB 2024 )
 
 # CLI commands:
 ## Create a new repository on the command line:
