@@ -1,0 +1,102 @@
+/* Apply styles to the body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* Style the container */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Style the headings */
+h4 {
+    color: #333;
+}
+
+/* Style the form */
+#task_form {
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+#add_task {
+    background-color: #0074d9;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Style the task list */
+#tasks {
+    list-style-type: decimal;
+}
+
+/* Style the filter input and refresh button */
+#task_filter {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#refresh {
+    background-color: #2ecc40;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Style the clear tasks button */
+#clear_task_btn {
+    background-color: #ff4136;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+/* Style the task list */
+#tasks {
+    list-style-type: decimal;
+    padding-left: 20px;
+}
+
+/* Style individual tasks */
+#tasks li {
+    margin-bottom: 10px;
+}
+
+/* Add a background color to tasks on hover */
+#tasks li:hover {
+    background-color: #f0f0f0;
+    transition: background-color 0.2s;
+}
+
+/* Style the "Clear Tasks" button */
+#clear_task_btn {
+    background-color: #ff4136;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* Style completed tasks (optional) */
+#tasks li.completed {
+    text-decoration: line-through;
+    color: #888;
+}

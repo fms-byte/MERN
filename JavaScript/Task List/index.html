@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" integrity="sha512-5fsy+3xG8N/1PV5MIJz9ZsWpkltijBI48gBzQ/Z2eVATePGHOkMIn+xTDHIfTZFVb9GMpflF2wOWItqxAP2oLQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+
+    <title>Task List</title>
+</head>
+<body>
+    <div class="container">
+        <h4>Todo List</h4>
+        <form id="task_form">
+            <input id="new_task" type="text" placeholder="New task">
+            <input type="submit" value="Add Task" id="add_task">
+        </form>
+        <hr>
+        <h4>Todo's</h4>
+        <input type="text" id="task_filter" placeholder="Filter Tasks">
+        <button type="submit" id="refresh">refresh</button>
+        <ol id="tasks"></ol>
+        <button id="clear_task_btn">Clear Tasks</button>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

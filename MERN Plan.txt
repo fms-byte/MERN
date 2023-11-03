@@ -1,0 +1,7 @@
+1. Free HTML, CSS, Bootstrap - 1 Week
+2. JavaScript - 4 week
+3. React - Conditional Rendering, Component Lifecycle, React Router, Redux, React hooks, Using REST api Important - 6 Week
+4. React Native - 3 Week
+5. NodeJS, Express & MongoDB - How to make an api, Connection between MongoDB and Express - 6 week
+6. Project Assignment - 4 week
+7. All Project in 6 months
