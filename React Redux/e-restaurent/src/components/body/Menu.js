@@ -1,28 +1,55 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
 import MenuItem from "./MenuItem";
 import DISHES from "../../data/dishes.js";
 import DishDetail from "./DishDetail.js";
+import { Button, CardColumns, Col, Modal, ModalFooter, Row } from "reactstrap";
 
-const Menu = () => {
-  const [dishes] = useState(DISHES);
-  const [selectedDish, setSelectedDish] = useState(null);
-  const onSelectDish = (dish) => {
-    setSelectedDish(dish);
+class Menu extends Component {
+  state = {
+    dishes: DISHES,
+    selectedDish: null,
+    modalOpen: false,
   };
-  const menu = dishes.map((dish) => {
-    return <MenuItem dish={ dish } onSelectDish={ onSelectDish } key={ dish.id }/>;
-  });
+  onSelectDish = (dish) => {
+    this.setState({
+      selectedDish: dish,
+      modalOpen: true,
+    });
+  };
 
-  const dishDetail = selectedDish ? <DishDetail dish={ selectedDish }/> : null;
+  toggleModal = () => {
+    this.setState({
+      modalOpen: !this.state.modalOpen,
+    });
+  };
 
-  return (
-    <div className="container">
-      <div className="row">
-        <div className="col-5">{ menu }</div>
-        <div className="col-7">{ dishDetail }</div>
+  render() {
+    const menu = this.state.dishes.map((dish) => {
+      return (
+        <Col key={dish.id}  xs={12} sm={6} md={4} >
+        <MenuItem dish={dish} onSelectDish={this.onSelectDish} key={dish.id} />
+        </Col>
+      );
+    });
+
+    const dishDetail = this.state.selectedDish ? (
+      <DishDetail dish={this.state.selectedDish} />
+    ) : null;
+
+    return (
+      <div className="container">
+        <Row className="justify-content-center">{menu}</Row>
+        <Modal isOpen={this.state.modalOpen} onClick={this.toggleModal}>
+          {dishDetail}
+          <ModalFooter>
+            <Button color="primary" onClick={this.toggleModal}>
+              Close
+            </Button>
+          </ModalFooter>
+        </Modal>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default Menu;
