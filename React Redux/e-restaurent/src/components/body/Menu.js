@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import MenuItem from "./MenuItem";
 import DISHES from "../../data/dishes.js";
 import DishDetail from "./DishDetail.js";
-import { Button, CardColumns, Col, Modal, ModalFooter, Row } from "reactstrap";
+import { Button, Col, Modal, ModalFooter, Row } from "reactstrap";
 
 class Menu extends Component {
   state = {

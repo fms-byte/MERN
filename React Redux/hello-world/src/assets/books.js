@@ -1,4 +1,6 @@
-const books = [
+const storedBooks = localStorage.getItem("books");
+
+const books = storedBooks ? JSON.parse(storedBooks) : [
   {
     id: 1,
     bookName: "1984",
