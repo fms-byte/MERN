@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import MenuItem from "./MenuItem";
 import DISHES from "../../data/dishes.js";
+import COMMENTS from "../../data/comments.js";
 import DishDetail from "./DishDetail.js";
 import { Button, Col, Modal, ModalFooter, Row } from "reactstrap";
 
 class Menu extends Component {
   state = {
     dishes: DISHES,
+    comments: COMMENTS,
     selectedDish: null,
     modalOpen: false,
   };
@@ -24,6 +26,7 @@ class Menu extends Component {
   };
 
   render() {
+    document.title = "Menu";
     const menu = this.state.dishes.map((dish) => {
       return (
         <Col key={dish.id}  xs={12} sm={6} md={4} >
@@ -32,9 +35,13 @@ class Menu extends Component {
       );
     });
 
-    const dishDetail = this.state.selectedDish ? (
-      <DishDetail dish={this.state.selectedDish} />
-    ) : null;
+    let dishDetail = null;
+    if(this.state.selectedDish != null){
+      const comments = this.state.comments.filter(comment => {
+        return comment.dishId === this.state.selectedDish.id;
+      })
+      dishDetail = <DishDetail dish={this.state.selectedDish} comments={comments}/>
+    }
 
     return (
       <div className="container">
