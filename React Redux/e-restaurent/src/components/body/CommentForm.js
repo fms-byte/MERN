@@ -20,12 +20,14 @@ class CommentForm extends Component {
   };
 
   handleSubmit = (event) => {
-    console.log(this.state);
+    //console.log(this.state);
+    this.props.addComment(this.props.dishId, this.state.rating, this.state.author, this.state.comment); //new way dispatch
     this.setState({
       author: "",
       rating: "",
       comment: "",
     });
+
     event.preventDefault();
   };
 
@@ -48,6 +50,7 @@ class CommentForm extends Component {
             value={this.state.rating}
             onChange={this.handleInputChange}
           >
+            <option>Rating</option>
             <option>1</option>
             <option>2</option>
             <option>3</option>
