@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import MenuItem from "./MenuItem";
 import DishDetail from "./DishDetail.js";
-import { Button, Col, Modal, ModalFooter, Row } from "reactstrap";
+import { Button, Col, Modal, ModalBody, ModalFooter, Row } from "reactstrap";
 import { connect } from "react-redux";
 
 const mapStateToProps = (state) => {
@@ -50,8 +50,8 @@ class Menu extends Component {
     return (
       <div className="container">
         <Row className="justify-content-center">{menu}</Row>
-        <Modal isOpen={this.state.modalOpen} onClick={this.toggleModal}>
-          {dishDetail}
+        <Modal isOpen={this.state.modalOpen}>
+          <ModalBody>{dishDetail}</ModalBody>
           <ModalFooter>
             <Button color="primary" onClick={this.toggleModal}>
               Close
