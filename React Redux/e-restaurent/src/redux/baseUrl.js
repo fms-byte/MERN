@@ -1,0 +1,1 @@
+export const baseUrl = 'http://localhost:3001/'; //The link of JSON SERVER

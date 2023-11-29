@@ -1,17 +1,24 @@
 import React from "react";
-
-const LoadComments = ({ comments }) => {
-  const previewComments = comments.map((c) => {
+import Loading from "./Loading";
+const LoadComments = (props) => {
+  if (props.commentsIsLoading) {
     return (
-      <div key={c.id}>
-        <h5>{c.author}</h5>
-        <p>{c.comment}</p>
-        <p>{c.rating}</p>
-        <p>{c.date}</p>
+      <div>
+        <Loading />
       </div>
     );
-  });
-  return <div>{previewComments}</div>;
+  } else {
+    return props.comments.map((comment) => {
+      return (
+        <div key={comment.id}>
+          <h5>{comment.author}</h5>
+          <p>{comment.comment}</p>
+          <p>Rating: {comment.rating}</p>
+          <p>{comment.date}</p>
+        </div>
+      );
+    });
+  }
 };
 
 export default LoadComments;

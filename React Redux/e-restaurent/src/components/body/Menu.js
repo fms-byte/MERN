@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import MenuItem from "./MenuItem";
 import DishDetail from "./DishDetail.js";
-import { Button, Col, Modal, ModalBody, ModalFooter, Row } from "reactstrap";
+import { Alert, Button, Col, Modal, ModalBody, ModalFooter, Row } from "reactstrap";
 import { connect } from "react-redux";
-import { addComment, fetchDishes } from "../../redux/actionCreators";
+import { addComment, fetchDishes, fetchComments } from "../../redux/actionCreators";
 import Loading from "./Loading";
 
 const mapStateToProps = (state) => {
@@ -17,6 +17,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
       addComment: (dishId, rating, author, comment) => dispatch(addComment(dishId, rating, author, comment)),
       fetchDishes: () => dispatch(fetchDishes()),
+      fetchComments: () => dispatch(fetchComments())
   }
 }
 
@@ -40,6 +41,7 @@ class Menu extends Component {
 
   componentDidMount() {
     this.props.fetchDishes();
+    this.props.fetchComments();
   }
 
   render() {
@@ -47,6 +49,11 @@ class Menu extends Component {
     if (this.props.dishes.isLoading) {
       return (
         <Loading />
+      );
+    }
+    else if( this.props.dishes.errMess != null){
+      return (
+        <Alert color="danger">{this.props.dishes.errMess}</Alert>
       );
     }
     else {
@@ -60,13 +67,14 @@ class Menu extends Component {
   
       let dishDetail = null;
       if(this.state.selectedDish != null){
-        const comments = this.props.comments.filter(comment => {
+        const comments = this.props.comments.comments.filter(comment => {
           return comment.dishId === this.state.selectedDish.id;
         })
         dishDetail = <DishDetail 
           dish={this.state.selectedDish} 
           comments={comments}
-          addComment={this.props.addComment}/>
+          addComment={this.props.addComment}
+          commentsIsLoading={this.props.comments.isLoading} />
       }
   
       return (
