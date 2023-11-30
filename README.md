@@ -4,9 +4,14 @@ MERN is a free and open-source JavaScript software stack for building dynamic we
 
 ## A 6-month long course on Bohubrihi Started on (22 AUG 2023 to 20 FEB 2024 )
 
-# CLI commands:
+## Create React App:
+```bash
+npx create-react-app my-app
+cd my-app
+npm start
+```
+# CLI commands for Git:
 ## Create a new repository on the command line:
-
 ```bash
 echo "# MERN" >> README.md
 git init
